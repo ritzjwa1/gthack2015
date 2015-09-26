@@ -49,6 +49,8 @@ function getCurrentTabUrl(callback) {
   }); 
 }
 
+//This is a helper function that gets the title
+
 function getTitle (url) {
   // These code snippets use an open-source library.
   var unirest = require('unirest');
@@ -63,6 +65,7 @@ var title = unirest.post("https://neutrinoapi-html-extract.p.mashape.com/html-ex
 });
 }
 
+// This is a helper function that gets hyperlinks
 function getHyperlinks(url) {
   var unirest = require('unirest');
   var hyperlinks = unirest.post("https://neutrinoapi-html-extract.p.mashape.com/html-extract-tags")
