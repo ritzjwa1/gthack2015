@@ -28,7 +28,6 @@
         },
   "permissions": [
     "activeTab",
-    "background",
-    "tabs"
+    "background"
   ]
 }
