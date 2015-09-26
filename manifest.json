@@ -1,17 +1,30 @@
 {
   "manifest_version": 2,
 
-  "name": "Getting started example",
-  "description": "This extension shows a Google Image search result for the current page",
+  "name": "Seeing Is Hearing",
+  "description": "This extension allows visually impaired 
+        users to hear what is being displayed on the current webpage",
   "version": "1.0",
 
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html",
-    "default_title": "Click here!"
+    "default_title": "Start Listening!"
   },
+  "externally_connectable": {
+  "matches": ["https://www.google.com/"]
+},
+
+"commands": {
+          "_execute_page_action": {
+            "suggested_key": {
+              "windows": "Alt+Shift+Z",
+              "mac": "Alt+Shift+Z"
+            }
+          }
+        },
   "permissions": [
     "activeTab",
-    "https://ajax.googleapis.com/"
+    "background"
   ]
 }
