@@ -43,31 +43,5 @@ function getCurrentTabUrl(callback) {
       return;  // don't allow this web page access
     if (request.openUrlInEditor)
       openUrl(request.openUrlInEditor);
-  });
-
-
-  /*
-  * Displays new webpage with "About" information upon button click
-  */
-  document.addEventListener('DOMContentLoaded', function() {
-  var checkPageButton = document.getElementById('checkPage');
-  checkPageButton.addEventListener('click', function() {
-
-    chrome.tabs.getSelected(null, function(tab) {
-      d = document;
-
-      var f = d.createElement('form');
-      f.action = 'chrome-extension://ojdmadhajmoaiojhamlcaejdpbbngacf/About.html';
-      f.method = 'post';
-      var i = d.createElement('input');
-      i.type = 'hidden';
-      i.name = 'url';
-      i.value = tab.url;
-      f.appendChild(i);
-      d.body.appendChild(f);
-      f.submit();
-    });
-  }, false);
-}, false); 
-
+  }); 
 }
